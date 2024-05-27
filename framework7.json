@@ -1,0 +1,17 @@
+{
+  "cwd": "C:\\dev\\El_Espia",
+  "type": [
+    "web"
+  ],
+  "name": "The Spy",
+  "framework": "core",
+  "template": "blank",
+  "bundler": false,
+  "theming": {
+    "customColor": true,
+    "color": "#e00a76",
+    "darkMode": false,
+    "iconFonts": true
+  },
+  "customBuild": false
+}

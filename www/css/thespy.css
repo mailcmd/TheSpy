@@ -1,0 +1,63 @@
+.size-50 { font-size: 50px }
+
+.navbar {
+    background-color: #e00a76;
+    font-size: 1.5rem;
+    height: 4rem;
+}
+
+.title {
+    text-transform: full-width;
+}
+
+.page-content .block {
+    margin-top: 50%;
+}
+
+.big-button {
+    width: 100%;
+    position: relative;    
+}
+.big-button:before {
+    content:     "";
+    display:     block;
+    padding-top: 100%; /* initial ratio of 1:1*/
+}
+
+.big-button .button {
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: unset;
+    text-transform: full-width;
+}
+
+.eye-closing {
+    color: #e00a76;
+    padding: 3px;
+    border-radius: 50%;
+    border: 3px solid #e00a76;
+/*  
+    animation-name: eye-closing;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+*/
+}
+
+@keyframes eye-closing {
+    0% {
+        scale: 1 1;
+    }
+    15% {
+        scale: 1 0.1;
+        translate: 0 20%;
+    }
+    30% {
+        scale: 1 1;
+        translate: 0 0;
+    }
+}
