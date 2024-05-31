@@ -46,6 +46,10 @@ li {
     height: 4rem;
 }
 
+.navbar .right {
+    margin-right: 12px !important;
+}
+
 .page-content .block {
     margin-top: 50%;
 }
@@ -208,12 +212,11 @@ li {
 
 .eye {
     color: var(--f7-navbar-text-color, var(--f7-bars-text-color));
-    padding: 3px;
+    padding: 4px 8px 7px 4px
 }
 
 .eye.closing {
     color: var(--f7-navbar-text-color, var(--f7-bars-text-color));
-    padding: 3px;
   
     animation-name: eye-closing;
     animation-duration: 20s;

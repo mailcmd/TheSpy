@@ -1,31 +1,30 @@
 {
-  "name": "the-spy",
-  "private": true,
+  "name": "dev.myplayground.thespy",
+  "displayName": "HelloCordova",
   "version": "1.0.0",
-  "description": "The Spy",
-  "repository": "",
-  "license": "UNLICENSED",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
   "scripts": {
-    "start": "npm run serve",
-    "serve": "http-server ./www/ -o -c 1 -a localhost -p 8080",
-    "postinstall": "cpy --flat ./node_modules/framework7-icons/fonts/*.* ./www/fonts/ && cpy --flat ./node_modules/material-icons/iconfont/*.* ./www/fonts/ && cpy --flat ./node_modules/framework7/*.js ./www/framework7 && cpy --flat ./node_modules/framework7/*.css ./www/framework7 && cpy --flat ./node_modules/framework7/*.map ./www/framework7"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "browserslist": [
-    "IOS >= 15",
-    "Safari >= 15",
-    "last 5 Chrome versions",
-    "last 5 Firefox versions"
+  "keywords": [
+    "ecosystem:cordova"
   ],
-  "dependencies": {
-    "dom7": "^4.0.6",
-    "framework7": "^8.3.3",
-    "framework7-icons": "^5.0.5",
-    "material-icons": "^1.13.12",
-    "skeleton-elements": "^4.0.1",
-    "swiper": "^11.1.3"
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-backbutton": {},
+      "cordova-plugin-insomnia": {},
+      "cordova-plugin-appminimize": {}
+    }
   },
   "devDependencies": {
-    "cpy-cli": "^5.0.0",
-    "http-server": "^14.1.1"
+    "cordova-plugin-appminimize": "^1.0.1",
+    "cordova-plugin-backbutton": "^0.3.0",
+    "cordova-plugin-insomnia": "^4.3.0"
   }
 }

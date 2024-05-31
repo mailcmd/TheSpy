@@ -1,0 +1,75 @@
+
+<div class="page" data-name="settings">
+  <div class="page-content">
+    <div class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="navbar-inner">
+          <div class="left">
+            <a href="#" class="link back" onclick="save_settings()">
+              <i class="f7-icons">arrow_left</i>
+            </a>
+          </div>
+          <div class="title">Ajustes</div>
+          <div class="right">
+            <i class="f7-icons">gear_alt_fill</i>
+          </div>
+      </div>
+    </div>
+
+    <div class="list simple-list">
+        <ul>
+          <li>
+            <span>Inmovilizar ese puto ojo</span>                   
+            <label class="toggle">
+              <input id="eye" type="checkbox"  />
+              <span class="toggle-icon"></span>
+            </label>
+          </li>
+          
+          <li>
+            <span>Cantidad de jugadores</span>
+            <div class="stepper stepper-small stepper-fill stepper-round stepper-init">
+                <div class="stepper-button-minus"></div>
+                <div class="stepper-input-wrap">
+                  <input id="players" type="text" min="3" max="12" step="1" readonly="" value="">
+                </div>
+                <div class="stepper-button-plus"></div>
+            </div>
+          </li>
+          
+          <li>
+            <div>
+              <span class="material-icons" style="position: relative;top: 7px; color: #ff3b30;">
+                <img src="assets/icons/spy.svg" style="filter: invert(1);" width="24">
+              </span>
+              <span id="badge-spies" class="badge" style="background-color: var(--f7-navbar-text-color, var(--f7-bars-text-color)); color: black;"></span>
+            </div>
+            <div style="width: 100%; margin: 0 16px">
+              <div class="range-slider range-slider-init range-slider-horizontal bgcolor-red">
+                <input id="spies" type="range" step="1">
+              </div>
+            </div>
+            <div>
+              <span id="badge-no-spies" class="badge" style="background-color: var(--f7-navbar-text-color, var(--f7-bars-text-color)); color: black;"></span>
+              <span class="material-icons" style="position: relative;top: 7px;">face_6</span>                    
+            </div>
+          </li>
+          
+          <li>
+            <span>Sentido de la ronda?</span>
+            <p id="direction" class="segmented segmented-round  segmented-raised" style="border: 1px solid var(--f7-md-surface-2);">
+              <button class="button button-round ${roundDirection==-1?'button-active':''}" onclick="Array.from(this.parentElement.children).forEach(b => b.classList.remove('button-active'));this.classList.add('button-active');this.parentNode.value='-1';save_settings();">
+                <i class="f7-icons">arrow_clockwise</i>
+              </button>
+              <button class="button button-round ${roundDirection==1?'button-active':''}" onclick="Array.from(this.parentElement.children).forEach(b => b.classList.remove('button-active'));this.classList.add('button-active');this.parentNode.value='1';save_settings();">
+                <i class="f7-icons">arrow_counterclockwise</i>
+              </button>
+            </p>          
+          </li>
+          
+        </ul>
+    </div>
+      
+  </div>
+</div>
+

@@ -1,0 +1,38 @@
+<div class="page" data-name="countdown">
+
+  <div class="toolbar toolbar-bottom">
+    <div class="toolbar-inner">
+      <div class="range-slider color-white range-slider-init" style="height: 100%; margin: 0 2rem;">
+        <input type="range" min="0" max="1" step="1" value="0" />
+      </div>
+    </div>
+  </div>
+
+  <div class="page-content">
+    
+    <div id="arrow" style="text-align: center;">
+      <span class="material-icons rotate-270" style="font-size: 150px; color: var(--f7-theme-color); display: inline-table;">
+        forward
+      </span>
+      <div style="position: relative;top: -1.5rem;font-weight: bold;">Jugador 1</div>
+    </div>
+
+    <div class="block">
+      ${Array(playersQty).fill().map( (_, i) => {
+        const p = i+1;
+        const step = 2 * Math.PI / playersQty;
+        const angle = Math.PI + roundDirection * step * i;
+        const radius = window.innerWidth / 2 - 40;
+        const left = (radius * Math.sin(angle))|0;
+        const top = (radius * Math.cos(angle))|0;
+        const mleft = ((radius-70) * Math.sin(angle))|0;
+        const mtop = ((radius-70) * Math.cos(angle))|0;
+        const deg = -180 * angle / Math.PI;
+        return '<div id="player-'+p+'" player="'+p+'" class="circle '+(playersOrder[i] < spiesQty ? 'spy' : '')+'" style="translate: '+left+'px '+top+'px; rotate: '+deg+'deg;">0</div>'+
+               '<div class="'+(playersOrder[i] < spiesQty ? 'spy' : '')+'" style="translate: '+mleft+'px '+mtop+'px; rotate: '+deg+'deg;"><i class="f7-icons">gobackward_minus</i></div>';
+      }).join('\n')}  
+    </div>    
+
+
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="dev.myplayground.thespy" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>The Spy</name>
+    <description>The Spy pero con vitaminas</description>
+    <author email="msante@gmail.com" href="https://myplayground.dev">
+        myPlayground Studio
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    
+    <platform name="android">
+        <icon density="ldpi" src="res/android/icons/ic_launcher-ldpi.png" />
+        <icon density="mdpi" src="res/android/icons/ic_launcher-mdpi.png" />
+        <icon density="hdpi" src="res/android/icons/ic_launcher-hdpi.png" />
+        <icon density="xhdpi" src="res/android/icons/ic_launcher-xhdpi.png" />    
+        <source-file src="src/android/BackbuttonPlugin.java" target-dir="src/com/badrit/Backbutton/" />
+    </platform>
+</widget>
