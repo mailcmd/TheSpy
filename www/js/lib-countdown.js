@@ -15,12 +15,39 @@ function page_postload_countdown() {
     );
     
     $('[data-name="countdown"] .range-slider').on('range:changed', function(e) {
-        if (e.target.querySelector('input').value == '1') {
+        if (e.target.querySelector('input').value-0 >= 0.5) {
+            app.range.setValue($('[data-name="countdown"] .range-slider')[0], 1);
+        } else {
+            app.range.setValue($('[data-name="countdown"] .range-slider')[0], 0);
+        }
+        
+        if (e.target.querySelector('input').value-0 == 1) {
             $('[data-name="countdown"] .range-knob-wrap > i')[0].innerText = 'lock_open_fill';
             $('[data-name="countdown"] .circle.spy').forEach( c => c.style.filter = 'invert(1)' );
+            endOfGame();
         } else {
             $('[data-name="countdown"] .range-knob-wrap > i')[0].innerText = 'lock_fill';        
             $('[data-name="countdown"] .circle.spy').forEach( c => c.style.filter = 'unset' );
         }        
     });
+}
+
+function endOfGame() {
+    // Create notification
+    const notificationCallbackOnClose = app.notification.create({
+        icon: '<img src="assets/icons/app-icon.png" />',
+        title: 'Fin del juego',
+        titleRightText: '',
+        subtitle: 'El juego ha terminado. ¡Felicitaciones a los gandarores y abucheos para los perdedores!',
+        text: 'Click para ir al inicio',
+        closeOnClick: true,
+        on: {
+            close: function () {
+                app.views.main.router.navigate('/');
+            },
+        },
+    });
+
+    // Open it
+    notificationCallbackOnClose.open();
 }

@@ -79,14 +79,13 @@ function onDeviceReady() {
                 if (firstTime) {
                     document.addEventListener('backbutton', function(e){
                         e.preventDefault();
-                        if (app.views.main.history.length == 1) {
+                        if (app.views.main.history.length <= 1) {
                             try {
                                 window.plugins.appMinimize.minimize();
                             } catch(e) {}
                             return;
-                        } else if (app.views.main.history.length == 3) {
-                            .clearPreviousHistory();
-                            app.views.main.router.navigate('/')
+                        } else if (app.views.main.history.length >= 3) {
+                            app.views.main.router.navigate('/');
                             return;
                         }
                         app.views.main.router.back();
@@ -95,8 +94,8 @@ function onDeviceReady() {
                 }
 
                 currentPage = page;
-                
-                if (page.name == 'settings') {
+                if (page.name == 'home') {
+                } else if (page.name == 'settings') {
                     page_load_settings();
                 } else if (page.name == 'wordlist') {
                     page_load_wordlist();
@@ -117,7 +116,9 @@ function onDeviceReady() {
 
     $(document).on('page:afterin', function (e) {
         const page = e.target;
-        if (page.getAttribute('data-name') == 'settings') {
+        if (page.getAttribute('data-name') == 'home') {
+            app.views.main.router.clearHistory();
+        } else if (page.getAttribute('data-name') == 'settings') {
         } else if (page.getAttribute('data-name') == 'wordlist') {
         } else if (page.getAttribute('data-name') == 'game') {
         } else if (page.getAttribute('data-name') == 'countdown') {

@@ -37,10 +37,6 @@ li {
   margin-bottom: 2rem;
 }
 
-.card {
-  background: var(--f7-md-surface-2);
-}
-
 .navbar {
     font-size: 1.5rem;
     height: 4rem;
@@ -133,8 +129,22 @@ li {
   transition-properties: transform;
 }
 
+[data-name="game"] .card {
+  background: var(--f7-md-surface-2);
+}
+[data-name="game"] .card::before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+    top: 0.5rem;
+    left: 0.5rem;
+    border: 4px solid var(--f7-md-surface);
+    margin: -4px 0px 0px -4px;
+    border-radius: 13px;
+}
 
-[data-name="game"] .big-button:nth-child(1) {
+.big-button:nth-child(1) {
     z-index: 1;    
 }
 
