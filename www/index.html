@@ -43,7 +43,7 @@
               <div class="left"></div>
               <div class="title">The Spy</div>
               <div class="right" style="border: 3px solid var(--f7-navbar-text-color, var(--f7-bars-text-color));border-radius: 50%;">
-                <i id="logo-eye" class="f7-icons eye closing">eye_fill</i>
+                <i id="logo-eye" class="f7-icons eye closing" onclick="about();">eye_fill</i>
               </div>
           </div>
         </div>
@@ -61,13 +61,13 @@
             <div class="grid grid-cols-2 grid-gap">
               <div class="big-button">
                 <button class="button button-raised button-fill" onclick="app.views.main.router.navigate('/settings')">
-                  <i class="f7-icons size-50">gear_alt_fill</i>
+                  <i class="f7-icons size-50" style="position: relative;left: -4px;">gear_alt_fill</i>
                   Ajustes
                 </button>
               </div>
               <div class="big-button">
                 <button class="button button-raised button-fill" onclick="app.views.main.router.navigate('/wordlist')">
-                  <i class="f7-icons size-50">list_dash</i>
+                  <i class="f7-icons size-50" style="position: relative;left: -4px;">list_dash</i>
                   Lista de palabras
                 </button>
               </div>

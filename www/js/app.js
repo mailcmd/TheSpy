@@ -118,6 +118,9 @@ function onDeviceReady() {
         const page = e.target;
         if (page.getAttribute('data-name') == 'home') {
             app.views.main.router.clearHistory();
+            if (eval(localStorage.getItem('eye')) ?? false) {
+                $('#logo-eye')[0].classList.remove('closing');
+            }
         } else if (page.getAttribute('data-name') == 'settings') {
         } else if (page.getAttribute('data-name') == 'wordlist') {
         } else if (page.getAttribute('data-name') == 'game') {
@@ -132,3 +135,20 @@ function onDeviceReady() {
 
 }
 
+function about() {
+    const notificationCallbackOnClose = app.notification.create({
+        icon: '<span class="material-icons color-green">extension</span>',
+        title: 'My Playground Studio',
+        titleRightText: '',
+        subtitle: 'App creada sólo por diversión,... como todo lo que hacemos en My Playground Studio.',
+        text: '',
+        closeOnClick: true,
+        on: {
+            close: function () {
+            },
+        },
+    });
+
+    // Open it
+    notificationCallbackOnClose.open();
+}
